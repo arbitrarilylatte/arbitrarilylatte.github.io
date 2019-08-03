@@ -2,14 +2,14 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Archivos: 2019 - Hexo</title>
+<title>Etiqueta: apache - Hexo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/apache/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
@@ -134,56 +134,87 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-
-<div class="card widget">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
     <div class="card-content">
-        <h3 class="tag is-link">
-        2019
-        </h3>
-        <div class="timeline">
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-08-03T09:22:47.000Z">2019-08-03</time>
-                        <a href="/2019/08/03/apacheDeploy/" class="has-link-black-ter is-size-6">apache同一ip部署多个项目配置不同域名</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/杂项/">杂项</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-08-02T12:52:23.000Z">2019-08-02</time>
-                        <a href="/2019/08/02/Utilities/" class="has-link-black-ter is-size-6">实用工具</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/杂项/">杂项</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-        </div>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">Etiquetas</a></li>
+            <li class="is-active"><a href="#" aria-current="page">apache</a></li>
+        </ul>
+        </nav>
     </div>
 </div>
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-03T09:22:47.000Z">2019-08-03</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/杂项/">杂项</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 125 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/03/apacheDeploy/">apache同一ip部署多个项目配置不同域名</a>
+            
+        </h1>
+        <div class="content">
+            <p>服务器环境由wamp搭建,假定wamp安装在C盘根目录下</p>
+<p>1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听<br>vi C:\wamp\bin\apache\apache2.4.23\conf\httpd </p>
+<pre><code>Listen 0.0.0.0:80 
+Listen [::0]:80
+Listen 0.0.0.0:4700
+Listen [::0]:4700`    </code></pre><p>2.修改httpd-vhosts文件,配置项目及域名<br>vi C:\wamp\bin\apache\apache2.4.23\conf\extra\httpd-vhosts  </p>
+<p>`    </p>
+<pre><code>&lt;VirtualHost 目标域名1&gt;
+    ServerName 目标域名1:80
+    ServerAlias 别名
+    DocumentRoot c:/wamp/www
+    &lt;Directory  &quot;c:/wamp/www/&quot;&gt;
+        Options +Indexes +Includes +FollowSymLinks +MultiViews
+        AllowOverride All
+        Require all granted
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+
+&lt;VirtualHost 目标域名2&gt;
+    ServerName 目标域名2:4700
+    ServerAlias 别名
+    DocumentRoot c:/wamp/项目2
+    &lt;Directory  &quot;c:/wamp/项目2&quot;&gt;
+        Options +Indexes +Includes +FollowSymLinks +MultiViews
+        AllowOverride All
+        Require all granted
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;</code></pre><p>`</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
 
 
 </div>
