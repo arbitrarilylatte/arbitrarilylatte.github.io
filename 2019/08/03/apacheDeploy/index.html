@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="服务器环境由wamp搭建,假定wamp安装在C盘根目录下 1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听vi C:\wamp\bin\apache\apache2.4.23\conf\httpd  Listen 0.0.0.0:80  Listen [::0]:80 Listen 0.0.0.0:4700 Listen [::0]:4700`    2.修改httpd-">
+    <meta name="description" content="服务器环境由wamp搭建,假定wamp安装在C盘根目录下 1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听vi C:\wamp\bin\apache\apache2.4.23\conf\httpd  1234Listen 0.0.0.0:80 Listen [::0]:80Listen 0.0.0.0:4700Listen [::0]:4700  2.修改httpd-vh">
 <meta name="keywords" content="apache">
 <meta property="og:type" content="article">
 <meta property="og:title" content="apache同一ip部署多个项目配置不同域名">
 <meta property="og:url" content="http://yoursite.com/2019/08/03/apacheDeploy/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="服务器环境由wamp搭建,假定wamp安装在C盘根目录下 1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听vi C:\wamp\bin\apache\apache2.4.23\conf\httpd  Listen 0.0.0.0:80  Listen [::0]:80 Listen 0.0.0.0:4700 Listen [::0]:4700`    2.修改httpd-">
+<meta property="og:description" content="服务器环境由wamp搭建,假定wamp安装在C盘根目录下 1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听vi C:\wamp\bin\apache\apache2.4.23\conf\httpd  1234Listen 0.0.0.0:80 Listen [::0]:80Listen 0.0.0.0:4700Listen [::0]:4700  2.修改httpd-vh">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-03T09:46:58.359Z">
+<meta property="og:updated_time" content="2019-08-05T09:02:27.783Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="apache同一ip部署多个项目配置不同域名">
-<meta name="twitter:description" content="服务器环境由wamp搭建,假定wamp安装在C盘根目录下 1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听vi C:\wamp\bin\apache\apache2.4.23\conf\httpd  Listen 0.0.0.0:80  Listen [::0]:80 Listen 0.0.0.0:4700 Listen [::0]:4700`    2.修改httpd-">
+<meta name="twitter:description" content="服务器环境由wamp搭建,假定wamp安装在C盘根目录下 1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听vi C:\wamp\bin\apache\apache2.4.23\conf\httpd  1234Listen 0.0.0.0:80 Listen [::0]:80Listen 0.0.0.0:4700Listen [::0]:4700  2.修改httpd-vh">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 125 words)
+                    a minute read (About 127 words)
                 </span>
                 
                 
@@ -170,33 +170,10 @@
         <div class="content">
             <p>服务器环境由wamp搭建,假定wamp安装在C盘根目录下</p>
 <p>1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听<br>vi C:\wamp\bin\apache\apache2.4.23\conf\httpd </p>
-<pre><code>Listen 0.0.0.0:80 
-Listen [::0]:80
-Listen 0.0.0.0:4700
-Listen [::0]:4700`    </code></pre><p>2.修改httpd-vhosts文件,配置项目及域名<br>vi C:\wamp\bin\apache\apache2.4.23\conf\extra\httpd-vhosts  </p>
-<p>`    </p>
-<pre><code>&lt;VirtualHost 目标域名1&gt;
-    ServerName 目标域名1:80
-    ServerAlias 别名
-    DocumentRoot c:/wamp/www
-    &lt;Directory  &quot;c:/wamp/www/&quot;&gt;
-        Options +Indexes +Includes +FollowSymLinks +MultiViews
-        AllowOverride All
-        Require all granted
-    &lt;/Directory&gt;
-&lt;/VirtualHost&gt;
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Listen 0.0.0.0:80 </span><br><span class="line">Listen [::0]:80</span><br><span class="line">Listen 0.0.0.0:4700</span><br><span class="line">Listen [::0]:4700</span><br></pre></td></tr></table></figure>
 
-&lt;VirtualHost 目标域名2&gt;
-    ServerName 目标域名2:4700
-    ServerAlias 别名
-    DocumentRoot c:/wamp/项目2
-    &lt;Directory  &quot;c:/wamp/项目2&quot;&gt;
-        Options +Indexes +Includes +FollowSymLinks +MultiViews
-        AllowOverride All
-        Require all granted
-    &lt;/Directory&gt;
-&lt;/VirtualHost&gt;</code></pre><p>`</p>
-
+<p>2.修改httpd-vhosts文件,配置项目及域名<br>vi C:\wamp\bin\apache\apache2.4.23\conf\extra\httpd-vhosts  </p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">VirtualHost</span> 目标域名<span class="hljs-attr">1</span>&gt;</span></span><br><span class="line">	ServerName 目标域名1:80</span><br><span class="line">	ServerAlias 别名</span><br><span class="line">	DocumentRoot c:/wamp/www</span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">Directory</span>  "<span class="hljs-attr">c:</span>/<span class="hljs-attr">wamp</span>/<span class="hljs-attr">www</span>/"&gt;</span></span><br><span class="line">		Options +Indexes +Includes +FollowSymLinks +MultiViews</span><br><span class="line">		AllowOverride All</span><br><span class="line">		Require all granted</span><br><span class="line">	<span class="hljs-tag">&lt;/<span class="hljs-name">Directory</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">VirtualHost</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">VirtualHost</span> 目标域名<span class="hljs-attr">2</span>&gt;</span></span><br><span class="line">	ServerName 目标域名2:4700</span><br><span class="line">	ServerAlias 别名</span><br><span class="line">	DocumentRoot c:/wamp/项目2</span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">Directory</span>  "<span class="hljs-attr">c:</span>/<span class="hljs-attr">wamp</span>/项目<span class="hljs-attr">2</span>"&gt;</span></span><br><span class="line">		Options +Indexes +Includes +FollowSymLinks +MultiViews</span><br><span class="line">		AllowOverride All</span><br><span class="line">		Require all granted</span><br><span class="line">	<span class="hljs-tag">&lt;/<span class="hljs-name">Directory</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">VirtualHost</span>&gt;</span></span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -254,6 +231,13 @@ Listen [::0]:4700`    </code></pre><p>2.修改httpd-vhosts文件,配置项目及
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/05/principle/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">principle</span>
+            </a>
+        </div>
+        
         
         <div class="level-end">
             <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/02/Utilities/">
@@ -306,7 +290,17 @@ Listen [::0]:4700`    </code></pre><p>2.修改httpd-vhosts文件,配置项目及
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Entradas
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        3
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
                     </p>
                     <p class="title has-text-weight-normal">
                         2
@@ -316,27 +310,17 @@ Listen [::0]:4700`    </code></pre><p>2.修改httpd-vhosts文件,配置项目及
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categoria
+                        Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        1
-                    </p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        Etiqueta
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        1
+                        3
                     </p>
                 </div>
             </div>
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank">
-                SEGUIR</a>
+                Follow</a>
         </div>
         
         
@@ -423,7 +407,7 @@ Listen [::0]:4700`    </code></pre><p>2.修改httpd-vhosts文件,配置项目及
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categorias
+                Categories
             </h3>
             <ul class="menu-list">
             <li>
@@ -433,6 +417,14 @@ Listen [::0]:4700`    </code></pre><p>2.修改httpd-vhosts文件,配置项目及
             </span>
             <span class="level-end">
                 <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/读书笔记/">
+            <span class="level-start">
+                <span class="level-item">读书笔记</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
             </span>
         </a></li>
             </ul>
@@ -444,9 +436,9 @@ Listen [::0]:4700`    </code></pre><p>2.修改httpd-vhosts文件,配置项目及
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Nube de etiquetas
+            Tag Cloud
         </h3>
-        <a href="/tags/apache/" style="font-size: 10px;">apache</a>
+        <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/原则/" style="font-size: 10px;">原则</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a>
     </div>
 </div>
 
@@ -458,8 +450,27 @@ Listen [::0]:4700`    </code></pre><p>2.修改httpd-vhosts文件,配置项目及
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/05/principle/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="principle">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-05T06:25:57.000Z">2019-08-05</time></div>
+                    <a href="/2019/08/05/principle/" class="has-link-black-ter is-size-6">principle</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/读书笔记/">读书笔记</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -507,7 +518,7 @@ Listen [::0]:4700`    </code></pre><p>2.修改httpd-vhosts文件,配置项目及
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -517,7 +528,7 @@ Listen [::0]:4700`    </code></pre><p>2.修改httpd-vhosts文件,配置项目及
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -531,13 +542,27 @@ Listen [::0]:4700`    </code></pre><p>2.修改httpd-vhosts文件,配置项目及
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/apache/">
                         <span class="tag">apache</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/原则/">
+                        <span class="tag">原则</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/读书笔记/">
+                        <span class="tag">读书笔记</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -562,8 +587,27 @@ Listen [::0]:4700`    </code></pre><p>2.修改httpd-vhosts文件,配置项目及
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/05/principle/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="principle">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-05T06:25:57.000Z">2019-08-05</time></div>
+                    <a href="/2019/08/05/principle/" class="has-link-black-ter is-size-6">principle</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/读书笔记/">读书笔记</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -611,7 +655,7 @@ Listen [::0]:4700`    </code></pre><p>2.修改httpd-vhosts文件,配置项目及
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -621,7 +665,7 @@ Listen [::0]:4700`    </code></pre><p>2.修改httpd-vhosts文件,配置项目及
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -635,13 +679,27 @@ Listen [::0]:4700`    </code></pre><p>2.修改httpd-vhosts文件,配置项目及
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/apache/">
                         <span class="tag">apache</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/原则/">
+                        <span class="tag">原则</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/读书笔记/">
+                        <span class="tag">读书笔记</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -821,10 +879,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Entradas',
+                POSTS: 'Posts',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categorias',
-                TAGS: 'Etiquetas',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
