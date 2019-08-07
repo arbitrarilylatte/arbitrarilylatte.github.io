@@ -2,24 +2,19 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>apache同一ip部署多个项目配置不同域名 - Hexo</title>
+<title>Category: PHP - Hexo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="服务器环境由wamp搭建,假定wamp安装在C盘根目录下 1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听,并开启vhosts配置及允许外部访问vi C:\wamp\bin\apache\apache2.4.23\conf\httpd  1234567Listen 0.0.0.0:80 Listen [::0]:80Listen 0.0.0.0:4700Listen [:">
-<meta name="keywords" content="apache">
-<meta property="og:type" content="article">
-<meta property="og:title" content="apache同一ip部署多个项目配置不同域名">
-<meta property="og:url" content="http://yoursite.com/2019/08/03/apacheDeploy/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/categories/PHP/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="服务器环境由wamp搭建,假定wamp安装在C盘根目录下 1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听,并开启vhosts配置及允许外部访问vi C:\wamp\bin\apache\apache2.4.23\conf\httpd  1234567Listen 0.0.0.0:80 Listen [::0]:80Listen 0.0.0.0:4700Listen [:">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-07T07:11:46.093Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="apache同一ip部署多个项目配置不同域名">
-<meta name="twitter:description" content="服务器环境由wamp搭建,假定wamp安装在C盘根目录下 1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听,并开启vhosts配置及允许外部访问vi C:\wamp\bin\apache\apache2.4.23\conf\httpd  1234567Listen 0.0.0.0:80 Listen [::0]:80Listen 0.0.0.0:4700Listen [:">
+<meta name="twitter:title" content="Hexo">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -94,7 +89,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="apache同一ip部署多个项目配置不同域名" height="28">
+                <img src="/images/logo.svg" alt="Hexo" height="28">
             
             </a>
         </div>
@@ -140,22 +135,34 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/categories">Categories</a></li>
+            
+            <li class="is-active"><a href="#" aria-current="page">PHP</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-03T09:22:47.000Z">2019-08-03</time>
+                <time class="level-item has-text-grey" datetime="2019-08-07T02:58:50.000Z">2019-08-07</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/杂项/">杂项</a>
+                <a class="has-link-grey -link" href="/categories/PHP/">PHP</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 159 words)
+                    3 minutes read (About 444 words)
                 </span>
                 
                 
@@ -164,48 +171,21 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                apache同一ip部署多个项目配置不同域名
+                <a class="has-link-black-ter" href="/2019/08/07/phpStart/">php</a>
             
         </h1>
         <div class="content">
-            <p>服务器环境由wamp搭建,假定wamp安装在C盘根目录下</p>
-<p>1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听,并开启vhosts配置及允许外部访问<br>vi C:\wamp\bin\apache\apache2.4.23\conf\httpd </p>
-<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Listen 0.0.0.0:80 </span><br><span class="line">Listen [::0]:80</span><br><span class="line">Listen 0.0.0.0:4700</span><br><span class="line">Listen [::0]:4700</span><br><span class="line"></span><br><span class="line"># Virtual hosts</span><br><span class="line">Include conf/extra/httpd-vhosts.conf</span><br></pre></td></tr></table></figure>
-
-<p>2.修改httpd-vhosts文件,配置项目及域名<br>vi C:\wamp\bin\apache\apache2.4.23\conf\extra\httpd-vhosts     </p>
-<pre><code class="xml"><span class="tag">&lt;<span class="name">VirtualHost</span> 目标域名<span class="attr">1</span>&gt;</span>
-    ServerName 目标域名1:80
-    ServerAlias 别名
-    DocumentRoot c:/wamp/www
-    <span class="tag">&lt;<span class="name">Directory</span>  "<span class="attr">c:</span>/<span class="attr">wamp</span>/<span class="attr">www</span>/"&gt;</span>
-        Options +Indexes +Includes +FollowSymLinks +MultiViews
-        AllowOverride All
-        Require all granted
-    <span class="tag">&lt;/<span class="name">Directory</span>&gt;</span>
-<span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span>
-
-<span class="tag">&lt;<span class="name">VirtualHost</span> 目标域名<span class="attr">2</span>&gt;</span>
-    ServerName 目标域名2:4700
-    ServerAlias 别名
-    DocumentRoot c:/wamp/项目2
-    <span class="tag">&lt;<span class="name">Directory</span>  "<span class="attr">c:</span>/<span class="attr">wamp</span>/项目<span class="attr">2</span>"&gt;</span>
-        Options +Indexes +Includes +FollowSymLinks +MultiViews
-        AllowOverride All
-        Require all granted
-    <span class="tag">&lt;/<span class="name">Directory</span>&gt;</span>
-<span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span></code></pre>
+            <p>| ———- |<br>| 1.字符串连接符: <font color="green">.</font> |<br>| 2.注释语句写在<?php ?>之间 |<br>| 3.变量定义:$var.使用时需要带$符 |<br>| 4.”echo”指令输出布尔类型时，如果是“true”则输出的是“1”，“false”则什么也不输出|<br>| 5.当双引号中包含变量($)时，变量会与双引号中的内容连接在一起；当单引号中包含变量($)时，变量会被当做字符串输出。|<br>| 6.Heredoc字符串结构:以<font color="green">&lt;&lt;&lt;标识符</font>起始,以<font color="green">标识符;</font>结束,结尾处必须另起一行且无<font color="green">标识符;</font>外其他字符|<br>| 7.赋值:分’=’和’&amp;’ &amp;为引用赋值,共用一块内存|<br>| 8.运算符:PHP存在 ‘===’ ‘&lt;&gt;’ ‘!==’,数字字符串可与数字变量作比较;逻辑运算符:’and,&amp;&amp;’,’or,&verbar;&verbar;’,’xor’(异或,有且仅有一个为true),’!’,and、or、xor优先级低于三元运算符</p>
 <hr>
-<p><font color="red">端口及授权部分存有疑问</font></p>
+<p>###常量:</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bool define ( string $name , mixed $value [, bool $case_insensitive = <span class="hljs-keyword">false</span> ] )</span><br></pre></td></tr></table></figure>
 
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/apache/">apache</a>
-                </div>
-            </div>
+<p>常量为全局的且使用时不带$符</p>
+<p>系统常量:</p>
+<p>| ———- |<br>| _<em>FILE_</em> |php程序文件名 |<br>| _<em>LINE_</em> | 当前代码行数|<br>| PHP_VERSION |当前解析器的版本号 |<br>| PHP_OS | 执行当前PHP版本的操作系统名称|</p>
+<p>###函数:</p>
+<p>| ———- |<br>| var_dump() | 显示关于一个或多个表达式的结构信息，包括表达式的类型与值。数组将递归展开值，通过缩进显示其结构。|<br>|fopen |fopen() 函数打开一个文件或 URL。如果 fopen() 失败，它将返回 FALSE 并附带错误信息|<br>|mixed constant(string constant_name)|获取常量值|<br>|bool defined(string constants_name)|判断常量是否被定义|<br>|unset() |用于销毁给定的变量|<br>|error_reporting() |设置当前脚本的错误报告级别(返回旧的错误报告级别)|<br>| memory_get_usage() | 获取内存消耗|</p>
+
         </div>
         
         
@@ -215,62 +195,9 @@
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
-        <div class="buttons is-centered">
-            
-                
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
-
-<div class="notification is-danger">
-    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-        </div>
-    </div>
-</div>
 
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/05/principle/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">principle</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/02/Utilities/">
-                <span class="level-item">实用工具</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
 
 
 </div>
@@ -864,7 +791,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="apache同一ip部署多个项目配置不同域名" height="28">
+                    <img src="/images/logo.svg" alt="Hexo" height="28">
                 
                 </a>
                 <p class="is-size-7">

@@ -2,24 +2,24 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>apache同一ip部署多个项目配置不同域名 - Hexo</title>
+<title>代码大全 2nd - Hexo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="服务器环境由wamp搭建,假定wamp安装在C盘根目录下 1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听,并开启vhosts配置及允许外部访问vi C:\wamp\bin\apache\apache2.4.23\conf\httpd  1234567Listen 0.0.0.0:80 Listen [::0]:80Listen 0.0.0.0:4700Listen [:">
-<meta name="keywords" content="apache">
+    <meta name="description" content="| ———- || 以所用语言编程,但思路不受其约束 |">
+<meta name="keywords" content="读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="apache同一ip部署多个项目配置不同域名">
-<meta property="og:url" content="http://yoursite.com/2019/08/03/apacheDeploy/index.html">
+<meta property="og:title" content="代码大全 2nd">
+<meta property="og:url" content="http://yoursite.com/2019/08/07/codeComplete/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="服务器环境由wamp搭建,假定wamp安装在C盘根目录下 1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听,并开启vhosts配置及允许外部访问vi C:\wamp\bin\apache\apache2.4.23\conf\httpd  1234567Listen 0.0.0.0:80 Listen [::0]:80Listen 0.0.0.0:4700Listen [:">
+<meta property="og:description" content="| ———- || 以所用语言编程,但思路不受其约束 |">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-07T07:11:46.093Z">
+<meta property="og:updated_time" content="2019-08-07T08:10:29.172Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="apache同一ip部署多个项目配置不同域名">
-<meta name="twitter:description" content="服务器环境由wamp搭建,假定wamp安装在C盘根目录下 1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听,并开启vhosts配置及允许外部访问vi C:\wamp\bin\apache\apache2.4.23\conf\httpd  1234567Listen 0.0.0.0:80 Listen [::0]:80Listen 0.0.0.0:4700Listen [:">
+<meta name="twitter:title" content="代码大全 2nd">
+<meta name="twitter:description" content="| ———- || 以所用语言编程,但思路不受其约束 |">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="apache同一ip部署多个项目配置不同域名" height="28">
+                <img src="/images/logo.svg" alt="代码大全 2nd" height="28">
             
             </a>
         </div>
@@ -145,17 +145,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-03T09:22:47.000Z">2019-08-03</time>
+                <time class="level-item has-text-grey" datetime="2019-08-07T02:25:36.000Z">2019-08-07</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/杂项/">杂项</a>
+                <a class="has-link-grey -link" href="/categories/读书笔记/">读书笔记</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 159 words)
+                    a few seconds read (About 15 words)
                 </span>
                 
                 
@@ -164,38 +164,11 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                apache同一ip部署多个项目配置不同域名
+                代码大全 2nd
             
         </h1>
         <div class="content">
-            <p>服务器环境由wamp搭建,假定wamp安装在C盘根目录下</p>
-<p>1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听,并开启vhosts配置及允许外部访问<br>vi C:\wamp\bin\apache\apache2.4.23\conf\httpd </p>
-<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Listen 0.0.0.0:80 </span><br><span class="line">Listen [::0]:80</span><br><span class="line">Listen 0.0.0.0:4700</span><br><span class="line">Listen [::0]:4700</span><br><span class="line"></span><br><span class="line"># Virtual hosts</span><br><span class="line">Include conf/extra/httpd-vhosts.conf</span><br></pre></td></tr></table></figure>
-
-<p>2.修改httpd-vhosts文件,配置项目及域名<br>vi C:\wamp\bin\apache\apache2.4.23\conf\extra\httpd-vhosts     </p>
-<pre><code class="xml"><span class="tag">&lt;<span class="name">VirtualHost</span> 目标域名<span class="attr">1</span>&gt;</span>
-    ServerName 目标域名1:80
-    ServerAlias 别名
-    DocumentRoot c:/wamp/www
-    <span class="tag">&lt;<span class="name">Directory</span>  "<span class="attr">c:</span>/<span class="attr">wamp</span>/<span class="attr">www</span>/"&gt;</span>
-        Options +Indexes +Includes +FollowSymLinks +MultiViews
-        AllowOverride All
-        Require all granted
-    <span class="tag">&lt;/<span class="name">Directory</span>&gt;</span>
-<span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span>
-
-<span class="tag">&lt;<span class="name">VirtualHost</span> 目标域名<span class="attr">2</span>&gt;</span>
-    ServerName 目标域名2:4700
-    ServerAlias 别名
-    DocumentRoot c:/wamp/项目2
-    <span class="tag">&lt;<span class="name">Directory</span>  "<span class="attr">c:</span>/<span class="attr">wamp</span>/项目<span class="attr">2</span>"&gt;</span>
-        Options +Indexes +Includes +FollowSymLinks +MultiViews
-        AllowOverride All
-        Require all granted
-    <span class="tag">&lt;/<span class="name">Directory</span>&gt;</span>
-<span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span></code></pre>
-<hr>
-<p><font color="red">端口及授权部分存有疑问</font></p>
+            <p>| ———- |<br>| 以所用语言编程,但思路不受其约束 |</p>
 
         </div>
         
@@ -203,7 +176,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/apache/">apache</a>
+                    <a class="has-link-grey -link" href="/tags/读书笔记/">读书笔记</a>
                 </div>
             </div>
         </div>
@@ -255,16 +228,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/05/principle/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/07/phpStart/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">principle</span>
+                <span class="level-item">php</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/02/Utilities/">
-                <span class="level-item">实用工具</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/05/ECMAScript6/">
+                <span class="level-item">ECMAScript6笔记</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -864,7 +837,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="apache同一ip部署多个项目配置不同域名" height="28">
+                    <img src="/images/logo.svg" alt="代码大全 2nd" height="28">
                 
                 </a>
                 <p class="is-size-7">

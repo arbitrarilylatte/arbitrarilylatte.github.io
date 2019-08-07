@@ -2,24 +2,24 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>apache同一ip部署多个项目配置不同域名 - Hexo</title>
+<title>ECMAScript6笔记 - Hexo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="服务器环境由wamp搭建,假定wamp安装在C盘根目录下 1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听,并开启vhosts配置及允许外部访问vi C:\wamp\bin\apache\apache2.4.23\conf\httpd  1234567Listen 0.0.0.0:80 Listen [::0]:80Listen 0.0.0.0:4700Listen [:">
-<meta name="keywords" content="apache">
+    <meta name="description" content="###变量:var 全局作用域(非跨域),可重复定义,存在变量升级(var shouldn’t be used in ES6)     let,const块作用域 不可重复定义.(代替立即执行函数).声明之前使用会报暂时性死区错误(use const by defualt/only use let if rebinding is needed) const不可重新赋值,属性值可修改.属性值固定可使">
+<meta name="keywords" content="ECMAScript6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="apache同一ip部署多个项目配置不同域名">
-<meta property="og:url" content="http://yoursite.com/2019/08/03/apacheDeploy/index.html">
+<meta property="og:title" content="ECMAScript6笔记">
+<meta property="og:url" content="http://yoursite.com/2019/08/05/ECMAScript6/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="服务器环境由wamp搭建,假定wamp安装在C盘根目录下 1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听,并开启vhosts配置及允许外部访问vi C:\wamp\bin\apache\apache2.4.23\conf\httpd  1234567Listen 0.0.0.0:80 Listen [::0]:80Listen 0.0.0.0:4700Listen [:">
+<meta property="og:description" content="###变量:var 全局作用域(非跨域),可重复定义,存在变量升级(var shouldn’t be used in ES6)     let,const块作用域 不可重复定义.(代替立即执行函数).声明之前使用会报暂时性死区错误(use const by defualt/only use let if rebinding is needed) const不可重新赋值,属性值可修改.属性值固定可使">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-07T07:11:46.093Z">
+<meta property="og:updated_time" content="2019-08-06T02:47:49.225Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="apache同一ip部署多个项目配置不同域名">
-<meta name="twitter:description" content="服务器环境由wamp搭建,假定wamp安装在C盘根目录下 1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听,并开启vhosts配置及允许外部访问vi C:\wamp\bin\apache\apache2.4.23\conf\httpd  1234567Listen 0.0.0.0:80 Listen [::0]:80Listen 0.0.0.0:4700Listen [:">
+<meta name="twitter:title" content="ECMAScript6笔记">
+<meta name="twitter:description" content="###变量:var 全局作用域(非跨域),可重复定义,存在变量升级(var shouldn’t be used in ES6)     let,const块作用域 不可重复定义.(代替立即执行函数).声明之前使用会报暂时性死区错误(use const by defualt/only use let if rebinding is needed) const不可重新赋值,属性值可修改.属性值固定可使">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="apache同一ip部署多个项目配置不同域名" height="28">
+                <img src="/images/logo.svg" alt="ECMAScript6笔记" height="28">
             
             </a>
         </div>
@@ -145,17 +145,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-03T09:22:47.000Z">2019-08-03</time>
+                <time class="level-item has-text-grey" datetime="2019-08-05T14:01:20.000Z">2019-08-05</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/杂项/">杂项</a>
+                <a class="has-link-grey -link" href="/categories/前端/">前端</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 159 words)
+                    2 minutes read (About 356 words)
                 </span>
                 
                 
@@ -164,46 +164,33 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                apache同一ip部署多个项目配置不同域名
+                ECMAScript6笔记
             
         </h1>
         <div class="content">
-            <p>服务器环境由wamp搭建,假定wamp安装在C盘根目录下</p>
-<p>1.进入apache配置目录配置监听端口,修改httpd文件,新增端口监听,并开启vhosts配置及允许外部访问<br>vi C:\wamp\bin\apache\apache2.4.23\conf\httpd </p>
-<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Listen 0.0.0.0:80 </span><br><span class="line">Listen [::0]:80</span><br><span class="line">Listen 0.0.0.0:4700</span><br><span class="line">Listen [::0]:4700</span><br><span class="line"></span><br><span class="line"># Virtual hosts</span><br><span class="line">Include conf/extra/httpd-vhosts.conf</span><br></pre></td></tr></table></figure>
-
-<p>2.修改httpd-vhosts文件,配置项目及域名<br>vi C:\wamp\bin\apache\apache2.4.23\conf\extra\httpd-vhosts     </p>
-<pre><code class="xml"><span class="tag">&lt;<span class="name">VirtualHost</span> 目标域名<span class="attr">1</span>&gt;</span>
-    ServerName 目标域名1:80
-    ServerAlias 别名
-    DocumentRoot c:/wamp/www
-    <span class="tag">&lt;<span class="name">Directory</span>  "<span class="attr">c:</span>/<span class="attr">wamp</span>/<span class="attr">www</span>/"&gt;</span>
-        Options +Indexes +Includes +FollowSymLinks +MultiViews
-        AllowOverride All
-        Require all granted
-    <span class="tag">&lt;/<span class="name">Directory</span>&gt;</span>
-<span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span>
-
-<span class="tag">&lt;<span class="name">VirtualHost</span> 目标域名<span class="attr">2</span>&gt;</span>
-    ServerName 目标域名2:4700
-    ServerAlias 别名
-    DocumentRoot c:/wamp/项目2
-    <span class="tag">&lt;<span class="name">Directory</span>  "<span class="attr">c:</span>/<span class="attr">wamp</span>/项目<span class="attr">2</span>"&gt;</span>
-        Options +Indexes +Includes +FollowSymLinks +MultiViews
-        AllowOverride All
-        Require all granted
-    <span class="tag">&lt;/<span class="name">Directory</span>&gt;</span>
-<span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span></code></pre>
+            <p>###变量:<br>var 全局作用域(非跨域),可重复定义,存在变量升级<br>(var shouldn’t be used in ES6)    </p>
+<p>let,const块作用域 不可重复定义.(代替立即执行函数).声明之前使用会报暂时性死区错误<br>(use const by defualt/only use let if rebinding is needed)</p>
+<p>const不可重新赋值,属性值可修改.属性值固定可使用:Object.freeze(<font color="green">O</font>);</p>
+<blockquote>
+<p>关于 es6的 let 特性在 for 循环结构 的个人理解:<br><a href="https://www.jianshu.com/p/8f890da2d8bc" target="_blank" rel="noopener">https://www.jianshu.com/p/8f890da2d8bc</a></p>
+</blockquote>
 <hr>
-<p><font color="red">端口及授权部分存有疑问</font></p>
+<p>###箭头函数: </p>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> numbers=[<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>];  </span><br><span class="line"><span class="hljs-keyword">const</span> double =numbers.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">number,i</span>)</span>&#123;  </span><br><span class="line">	<span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;i&#125;</span>: <span class="hljs-subst">$&#123;number * <span class="hljs-number">2</span>&#125;</span>`</span>;  </span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//箭头函数,单参数()可省略</span></span><br><span class="line"><span class="hljs-keyword">const</span> double2 =numbers.map(<span class="hljs-function">(<span class="hljs-params">number,i</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;i&#125;</span>: <span class="hljs-subst">$&#123;number * <span class="hljs-number">2</span>&#125;</span>`</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//箭头函数隐式返回</span></span><br><span class="line"><span class="hljs-keyword">const</span> double3 =numbers.map(<span class="hljs-function">(<span class="hljs-params">number,i</span>) =&gt;</span>  <span class="hljs-string">`<span class="hljs-subst">$&#123;i&#125;</span>: <span class="hljs-subst">$&#123;number * <span class="hljs-number">2</span>&#125;</span>`</span>);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(double3);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//匿名函数</span></span><br><span class="line"><span class="hljs-keyword">const</span> greet= <span class="hljs-function"><span class="hljs-params">name</span> =&gt;</span> &#123;alert(<span class="hljs-string">`Hello <span class="hljs-subst">$&#123;name&#125;</span>`</span>)&#125;</span><br><span class="line">greet(<span class="hljs-string">"mike"</span>);</span><br></pre></td></tr></table></figure>
 
+<p>函数独立运行,没有通过call,apply,bind改变this值,则独立函数中的this指向window/global/(严格模式)undefined<br>想让函数的this值绑定定义时的父级作用域的this值,并且不希望this调用时被改变,可以使用箭头函数的写法:</p>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> Jelly=&#123;  </span><br><span class="line">	name: <span class="hljs-string">'Jelly'</span>,</span><br><span class="line">	hobbies: [<span class="hljs-string">'Coding'</span>,<span class="hljs-string">'Sleeping'</span>,<span class="hljs-string">'Reading'</span>],</span><br><span class="line">	printHobbies:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">		<span class="hljs-comment">// let self=this;</span></span><br><span class="line">		<span class="hljs-comment">// this.hobbies.map(function(hobby)&#123;</span></span><br><span class="line">		<span class="hljs-keyword">this</span>.hobbies.map(<span class="hljs-function"><span class="hljs-params">hobby</span> =&gt;</span> &#123;</span><br><span class="line">			<span class="hljs-comment">// console.log(`$&#123;self.name&#125; loves $&#123;hobby&#125;`)</span></span><br><span class="line">			<span class="hljs-comment">//使用函数且未指定self,则this指向window</span></span><br><span class="line">			<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">$&#123;<span class="hljs-keyword">this</span>.name&#125;</span> loves <span class="hljs-subst">$&#123;hobby&#125;</span>`</span>)</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">Jelly.printHobbies();</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>###函数参数默认值</p>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//multiply();multiply(2,);multiply(undefined,) 前项不能为空,可设a为undefined</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">multiply</span>(<span class="hljs-params">a = <span class="hljs-number">5</span>,b = <span class="hljs-number">3</span></span>)</span>&#123;</span><br><span class="line">	<span class="hljs-comment">/* a = a || 5;</span></span><br><span class="line"><span class="hljs-comment">	b = b || 3; */</span></span><br><span class="line">	<span class="hljs-keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/apache/">apache</a>
+                    <a class="has-link-grey -link" href="/tags/ECMAScript6/">ECMAScript6</a>
                 </div>
             </div>
         </div>
@@ -255,16 +242,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/05/principle/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/07/codeComplete/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">principle</span>
+                <span class="level-item">代码大全 2nd</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/02/Utilities/">
-                <span class="level-item">实用工具</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/05/principle/">
+                <span class="level-item">principle</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -864,7 +851,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="apache同一ip部署多个项目配置不同域名" height="28">
+                    <img src="/images/logo.svg" alt="ECMAScript6笔记" height="28">
                 
                 </a>
                 <p class="is-size-7">
