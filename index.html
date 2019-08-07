@@ -164,16 +164,103 @@
             
         </h1>
         <div class="content">
-            <p>| ———- |<br>| 1.字符串连接符: <font color="green">.</font> |<br>| 2.注释语句写在<?php ?>之间 |<br>| 3.变量定义:$var.使用时需要带$符 |<br>| 4.”echo”指令输出布尔类型时，如果是“true”则输出的是“1”，“false”则什么也不输出|<br>| 5.当双引号中包含变量($)时，变量会与双引号中的内容连接在一起；当单引号中包含变量($)时，变量会被当做字符串输出。|<br>| 6.Heredoc字符串结构:以<font color="green">&lt;&lt;&lt;标识符</font>起始,以<font color="green">标识符;</font>结束,结尾处必须另起一行且无<font color="green">标识符;</font>外其他字符|<br>| 7.赋值:分’=’和’&amp;’ &amp;为引用赋值,共用一块内存|<br>| 8.运算符:PHP存在 ‘===’ ‘&lt;&gt;’ ‘!==’,数字字符串可与数字变量作比较;逻辑运算符:’and,&amp;&amp;’,’or,&verbar;&verbar;’,’xor’(异或,有且仅有一个为true),’!’,and、or、xor优先级低于三元运算符</p>
+            <table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.字符串连接符: <font color="green">.</font></td>
+</tr>
+<tr>
+<td>2.注释语句写在<?php ?>之间</td>
+</tr>
+<tr>
+<td>3.变量定义:$var.使用时需要带$符</td>
+</tr>
+<tr>
+<td>4.”echo”指令输出布尔类型时，如果是“true”则输出的是“1”，“false”则什么也不输出</td>
+</tr>
+<tr>
+<td>5.当双引号中包含变量($)时，变量会与双引号中的内容连接在一起；当单引号中包含变量($)时，变量会被当做字符串输出。</td>
+</tr>
+<tr>
+<td>6.Heredoc字符串结构:以<font color="green">&lt;&lt;&lt;标识符</font>起始,以<font color="green">标识符;</font>结束,结尾处必须另起一行且无<font color="green">标识符;</font>外其他字符</td>
+</tr>
+<tr>
+<td>7.赋值:分’=’和’&amp;’ &amp;为引用赋值,共用一块内存</td>
+</tr>
+<tr>
+<td>8.运算符:PHP存在 ‘===’ ‘&lt;&gt;’ ‘!==’,数字字符串可与数字变量作比较;逻辑运算符:’and,&amp;&amp;’,’or,&verbar;&verbar;’,’xor’(异或,有且仅有一个为true),’!’,and、or、xor优先级低于三元运算符</td>
+</tr>
+</tbody></table>
 <hr>
-<p>###常量:</p>
+<p>###常量:  </p>
 <figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bool define ( string $name , mixed $value [, bool $case_insensitive = <span class="hljs-keyword">false</span> ] )</span><br></pre></td></tr></table></figure>
 
 <p>常量为全局的且使用时不带$符</p>
-<p>系统常量:</p>
-<p>| ———- |<br>| _<em>FILE_</em> |php程序文件名 |<br>| _<em>LINE_</em> | 当前代码行数|<br>| PHP_VERSION |当前解析器的版本号 |<br>| PHP_OS | 执行当前PHP版本的操作系统名称|</p>
-<p>###函数:</p>
-<p>| ———- |<br>| var_dump() | 显示关于一个或多个表达式的结构信息，包括表达式的类型与值。数组将递归展开值，通过缩进显示其结构。|<br>|fopen |fopen() 函数打开一个文件或 URL。如果 fopen() 失败，它将返回 FALSE 并附带错误信息|<br>|mixed constant(string constant_name)|获取常量值|<br>|bool defined(string constants_name)|判断常量是否被定义|<br>|unset() |用于销毁给定的变量|<br>|error_reporting() |设置当前脚本的错误报告级别(返回旧的错误报告级别)|<br>| memory_get_usage() | 获取内存消耗|</p>
+<table>
+<thead>
+<tr>
+<th>系统常量:</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>_<em>FILE_</em></td>
+<td>php程序文件名</td>
+</tr>
+<tr>
+<td>_<em>LINE_</em></td>
+<td>当前代码行数</td>
+</tr>
+<tr>
+<td>PHP_VERSION</td>
+<td>当前解析器的版本号</td>
+</tr>
+<tr>
+<td>PHP_OS</td>
+<td>执行当前PHP版本的操作系统名称</td>
+</tr>
+</tbody></table>
+<hr>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>var_dump()</td>
+<td>显示关于一个或多个表达式的结构信息，包括表达式的类型与值。数组将递归展开值，通过缩进显示其结构。</td>
+</tr>
+<tr>
+<td>fopen</td>
+<td>fopen() 函数打开一个文件或 URL。如果 fopen() 失败，它将返回 FALSE 并附带错误信息</td>
+</tr>
+<tr>
+<td>mixed constant(string constant_name)</td>
+<td>获取常量值</td>
+</tr>
+<tr>
+<td>bool defined(string constants_name)</td>
+<td>判断常量是否被定义</td>
+</tr>
+<tr>
+<td>unset()</td>
+<td>用于销毁给定的变量</td>
+</tr>
+<tr>
+<td>error_reporting()</td>
+<td>设置当前脚本的错误报告级别(返回旧的错误报告级别)</td>
+</tr>
+<tr>
+<td>memory_get_usage()</td>
+<td>获取内存消耗</td>
+</tr>
+</tbody></table>
 
         </div>
         
@@ -218,7 +305,16 @@
             
         </h1>
         <div class="content">
-            <p>| ———- |<br>| 以所用语言编程,但思路不受其约束 |</p>
+            <table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>以所用语言编程,但思路不受其约束</td>
+</tr>
+</tbody></table>
 
         </div>
         
@@ -519,7 +615,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        Entradas
                     </p>
                     <p class="title has-text-weight-normal">
                         6
@@ -529,7 +625,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categories
+                        Categorias
                     </p>
                     <p class="title has-text-weight-normal">
                         4
@@ -539,7 +635,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        Etiquetas
                     </p>
                     <p class="title has-text-weight-normal">
                         5
@@ -549,7 +645,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank">
-                Follow</a>
+                SEGUIR</a>
         </div>
         
         
@@ -636,7 +732,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                Categorias
             </h3>
             <ul class="menu-list">
             <li>
@@ -681,7 +777,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Tag Cloud
+            Nube de etiquetas
         </h3>
         <a href="/tags/ECMAScript6/" style="font-size: 10px;">ECMAScript6</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/原则/" style="font-size: 10px;">原则</a> <a href="/tags/读书笔记/" style="font-size: 20px;">读书笔记</a>
     </div>
@@ -695,7 +791,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
         
         <article class="media">
@@ -801,7 +897,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -825,7 +921,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -884,7 +980,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
         
         <article class="media">
@@ -990,7 +1086,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -1014,7 +1110,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -1228,10 +1324,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
+                POSTS: 'Entradas',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
+                CATEGORIES: 'Categorias',
+                TAGS: 'Etiquetas',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
