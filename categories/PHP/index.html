@@ -2,7 +2,7 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Categoria: PHP - Hexo</title>
+<title>Catégorie: PHP - Hexo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -138,13 +138,181 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/categories">Categorias</a></li>
+            <li><a href="/categories">Catégories</a></li>
             
             <li class="is-active"><a href="#" aria-current="page">PHP</a></li>
         </ul>
         </nav>
     </div>
 </div>
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-09T02:25:57.000Z">2019-08-09</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/PHP/">PHP</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 385 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/09/phpFunction/">phpFunction</a>
+            
+        </h1>
+        <div class="content">
+            <table>
+<thead>
+<tr>
+<th>函数</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>var_dump()</td>
+<td>显示关于一个或多个表达式的结构信息，包括表达式的类型与值。数组将递归展开值，通过缩进显示其结构。</td>
+</tr>
+<tr>
+<td>print_r</td>
+<td>var_dump返回表达式的类型与值而print_r仅返回结果</td>
+</tr>
+<tr>
+<td>fopen</td>
+<td>fopen() 函数打开一个文件或 URL。如果 fopen() 失败，它将返回 FALSE 并附带错误信息</td>
+</tr>
+<tr>
+<td>mixed constant(string constant_name)</td>
+<td>获取常量值</td>
+</tr>
+<tr>
+<td>bool defined(string constants_name)</td>
+<td>判断常量是否被定义</td>
+</tr>
+<tr>
+<td>unset()</td>
+<td>用于销毁给定的变量</td>
+</tr>
+<tr>
+<td>error_reporting()</td>
+<td>设置当前脚本的错误报告级别(返回旧的错误报告级别)</td>
+</tr>
+<tr>
+<td>memory_get_usage()</td>
+<td>获取内存消耗</td>
+</tr>
+<tr>
+<td>ceil()</td>
+<td>返回数字的上入整数</td>
+</tr>
+<tr>
+<td>file_get_contents();</td>
+<td>文件读取函数</td>
+</tr>
+</tbody></table>
+<hr>
+<p>###方法:<br>重载:方法的重载通过<strong>call来实现，当调用不存在的方法的时候，将会转为参数调用</strong>call方法，当调用不存在的静态方法时会使用__callStatic重载。</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__call</span><span class="hljs-params">($name, $args)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> ($name == <span class="hljs-string">'speedUp'</span>) &#123;</span><br><span class="line">        <span class="hljs-keyword">$this</span>-&gt;speed += <span class="hljs-number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对象复制:在一些特殊情况下，可以通过关键字clone来复制一个对象，这时__clone方法会被调用，通过这个魔术方法来设置属性的值。</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">public</span> $name = <span class="hljs-string">'car'</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__clone</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        $obj = <span class="hljs-keyword">new</span> Car();</span><br><span class="line">        $obj-&gt;name = <span class="hljs-keyword">$this</span>-&gt;name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">$a = <span class="hljs-keyword">new</span> Car();</span><br><span class="line">$a-&gt;name = <span class="hljs-string">'new car'</span>;</span><br><span class="line">$b = <span class="hljs-keyword">clone</span> $a;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> ($a == $b) <span class="hljs-keyword">echo</span> <span class="hljs-string">'=='</span>;   <span class="hljs-comment">//true</span></span><br><span class="line"><span class="hljs-keyword">if</span> ($a === $b) <span class="hljs-keyword">echo</span> <span class="hljs-string">'==='</span>; <span class="hljs-comment">//false</span></span><br></pre></td></tr></table></figure>
+
+<p>对象序列化:</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$a = <span class="hljs-keyword">new</span> Car();</span><br><span class="line">$str = serialize($a); <span class="hljs-comment">//对象序列化成字符串</span></span><br><span class="line">$b = unserialize($str); <span class="hljs-comment">//反序列化为对象</span></span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-07T09:21:33.000Z">2019-08-07</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/PHP/">PHP</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 356 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/07/phpOperator/">php运算符</a>
+            
+        </h1>
+        <div class="content">
+            <table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.字符串连接符: “.”、“.=”(连接赋值运算符):将右边参数附加到左边的参数后</td>
+</tr>
+<tr>
+<td>2.赋值运算符:分’=’和’&amp;’ &amp;为引用赋值,共用一块内存</td>
+</tr>
+<tr>
+<td>3.比较运算符:PHP存在 ‘===’ ‘&lt;&gt;’ ‘!==’,数字字符串可与数字变量作比较</td>
+</tr>
+<tr>
+<td>4.逻辑运算符:<br>&nbsp;&nbsp;&nbsp;&nbsp;与:’and,&amp;&amp;’<br>&nbsp;&nbsp;&nbsp;&nbsp;或:’or,&verbar;&verbar;’<br>&nbsp;&nbsp;&nbsp;&nbsp;异或:’xor’(有且仅有一个为true),<br>&nbsp;&nbsp;&nbsp;&nbsp;非:’!’<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">and、or、xor优先级低于三元运算符</font></td>
+</tr>
+<tr>
+<td>5.错误控制运算符‘@’:<br>&nbsp;&nbsp;&nbsp;&nbsp;对于一些可能会在运行过程中出错的表达式时，我们不希望出错的时候给客户显示错误信息，这样对用户不友好。于是，可以将@放置在一个PHP表达式之前，该表达式可能产生的任何错误信息都被忽略掉；<br>&nbsp;&nbsp;&nbsp;&nbsp;如果激活了track_error（这个玩意在php.ini中设置）特性，表达式所产生的任何错误信息都被存放在变量$php_errormsg中，此变量在每次出错时都会被覆盖，所以如果想用它的话必须尽早检查;<br>&nbsp;&nbsp;&nbsp;&nbsp;‘@’不会屏蔽解析错误的信息，不能把它放在函数或类的定义之前，也不能用于条件结构例如if和foreach等。</td>
+</tr>
+</tbody></table>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
 
     <div class="card">
     
@@ -162,7 +330,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 444 words)
+                    7 minutes read (About 1032 words)
                 </span>
                 
                 
@@ -171,7 +339,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/08/07/phpStart/">php</a>
+                <a class="has-link-black-ter" href="/2019/08/07/phpStart/">php备忘</a>
             
         </h1>
         <div class="content">
@@ -182,31 +350,39 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>1.字符串连接符: <font color="green">.</font></td>
+<td>1.注释语句写在<?php ?>之间</td>
 </tr>
 <tr>
-<td>2.注释语句写在<?php ?>之间</td>
+<td>2.变量定义:$var.使用时需要带$符</td>
 </tr>
 <tr>
-<td>3.变量定义:$var.使用时需要带$符</td>
+<td>3.”echo”指令输出布尔类型时，如果是“true”则输出的是“1”，“false”则什么也不输出</td>
 </tr>
 <tr>
-<td>4.”echo”指令输出布尔类型时，如果是“true”则输出的是“1”，“false”则什么也不输出</td>
+<td>4.当双引号中包含变量($)时，变量会与双引号中的内容连接在一起；当单引号中包含变量($)时，变量会被当做字符串输出。</td>
 </tr>
 <tr>
-<td>5.当双引号中包含变量($)时，变量会与双引号中的内容连接在一起；当单引号中包含变量($)时，变量会被当做字符串输出。</td>
+<td>5.Heredoc字符串结构:以<font color="green">&lt;&lt;&lt;标识符</font>起始,以<font color="green">标识符;</font>结束,结尾处必须另起一行且无<font color="green">标识符;</font>外其他字符</td>
 </tr>
 <tr>
-<td>6.Heredoc字符串结构:以<font color="green">&lt;&lt;&lt;标识符</font>起始,以<font color="green">标识符;</font>结束,结尾处必须另起一行且无<font color="green">标识符;</font>外其他字符</td>
+<td>for循环不需要声明变量类型</td>
 </tr>
 <tr>
-<td>7.赋值:分’=’和’&amp;’ &amp;为引用赋值,共用一块内存</td>
+<td>foreach:<br>&nbsp;&nbsp;&nbsp;&nbsp;foreach (数组 as 值)<br>&nbsp;&nbsp;&nbsp;&nbsp;foreach (数组 as 下标($key) =&gt; 值)</td>
 </tr>
 <tr>
-<td>8.运算符:PHP存在 ‘===’ ‘&lt;&gt;’ ‘!==’,数字字符串可与数字变量作比较;逻辑运算符:’and,&amp;&amp;’,’or,&verbar;&verbar;’,’xor’(异或,有且仅有一个为true),’!’,and、or、xor优先级低于三元运算符</td>
+<td>创建数组:$arr=array(); 分索引数组及关联数组(以字符串为key)</td>
+</tr>
+<tr>
+<td>类使用class开头,通过new实例化,通过-&gt;获取属性.具有权限属性</td>
+</tr>
+<tr>
+<td>方法:<br>&nbsp;&nbsp;&nbsp;&nbsp;声明 function xxx(){};<br>&nbsp;&nbsp;&nbsp;&nbsp;静态方法操作符为’::’,$this伪变量不允许使用。可以使用self(::)，parent，static在内部调用静态方法与属性。;<br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>construct()构造函数;<br>&nbsp;&nbsp;&nbsp;&nbsp;parent::</strong>construct()调用父类构造函数<br>&nbsp;&nbsp;&nbsp;&nbsp;析构函数 __destruct() <br>&nbsp;&nbsp;&nbsp;&nbsp;可将类名函数名赋给变量动态调用</td>
+</tr>
+<tr>
+<td>***</td>
 </tr>
 </tbody></table>
-<hr>
 <p>###常量:  </p>
 <figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bool define ( string $name , mixed $value [, bool $case_insensitive = <span class="hljs-keyword">false</span> ] )</span><br></pre></td></tr></table></figure>
 
@@ -236,42 +412,16 @@
 </tr>
 </tbody></table>
 <hr>
-<table>
-<thead>
-<tr>
-<th>函数</th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>var_dump()</td>
-<td>显示关于一个或多个表达式的结构信息，包括表达式的类型与值。数组将递归展开值，通过缩进显示其结构。</td>
-</tr>
-<tr>
-<td>fopen</td>
-<td>fopen() 函数打开一个文件或 URL。如果 fopen() 失败，它将返回 FALSE 并附带错误信息</td>
-</tr>
-<tr>
-<td>mixed constant(string constant_name)</td>
-<td>获取常量值</td>
-</tr>
-<tr>
-<td>bool defined(string constants_name)</td>
-<td>判断常量是否被定义</td>
-</tr>
-<tr>
-<td>unset()</td>
-<td>用于销毁给定的变量</td>
-</tr>
-<tr>
-<td>error_reporting()</td>
-<td>设置当前脚本的错误报告级别(返回旧的错误报告级别)</td>
-</tr>
-<tr>
-<td>memory_get_usage()</td>
-<td>获取内存消耗</td>
-</tr>
-</tbody></table>
+<p>###cookie:<br>setcookie<br>| 参数 |<br>| ———- |<br>|name（ Cookie名）可以通过$_COOKIE[‘name’] 进行访问|<br>|value（Cookie的值）  |<br>|expire（过期时间）Unix时间戳格式，默认为0，表示浏览器关闭即失效   |<br>|path（有效路径）如果路径设置为’/‘，则整个网站都有效,设定了其他路径之后，则只在设定的路径以及子路径下有效  |<br>|domain（有效域）默认整个域名都有效，如果设置了’<a href="http://www.xxx.com&#39;,则只在www子域中有效|" target="_blank" rel="noopener">www.xxx.com&#39;,则只在www子域中有效|</a></p>
+<p>PHP中还有一个设置Cookie的函数setrawcookie，setrawcookie跟setcookie基本一样，唯一的不同就是value值不会自动的进行urlencode，因此在需要的时候要手动的进行urlencode。  </p>
+<p>因为Cookie是通过HTTP标头进行设置的，所以也可以直接使用header方法进行设置。</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">header(<span class="hljs-string">"Set-Cookie:cookie_name=value"</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//删除cookie</span></span><br><span class="line">setcookie(<span class="hljs-string">'test'</span>, <span class="hljs-string">''</span>, time()<span class="hljs-number">-1</span>); </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//通过header来删除cookie</span></span><br><span class="line">header(<span class="hljs-string">"Set-Cookie:test=1393832059; expires="</span>.gmdate(<span class="hljs-string">'D, d M Y H:i:s \G\M\T'</span>, time()<span class="hljs-number">-1</span>));</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>session:<br>&emsp;在PHP中使用session非常简单，先执行session_start方法开启session，然后通过全局变量$_SESSION进行session的读写。<br>&emsp;session会自动的对要设置的值进行encode与decode，因此session可以支持任意数据类型，包括数据与对象等。<br>&emsp;默认情况下，session是以文件形式存储在服务器上的，因此当一个页面开启了session之后，会独占这个session文件，这样会导致当前用户的其他并发访问无法执行而等待。可以采用缓存或者数据库的形式存储来解决这个问题</p>
+<p>&emsp;删除某个session值可以使用PHP的unset函数，删除后就会从全局变量$_SESSION中去除，无法访问。<br>&emsp;如果要删除所有的session，可以使用session_destroy函数销毁当前session，session_destroy会删除所有数据，但是session_id仍然存在。值得注意的是，session_destroy并不会立即的销毁全局变量$_SESSION中的值，只有当下次再访问的时候，$_SESSION才为空，因此如果需要立即销毁$_SESSION，可以使用unset函数。<br>&emsp;如果需要同时销毁cookie中的session_id，通常在用户退出的时候可能会用到，则还需要显式的调用setcookie方法删除session_id的cookie值。</p>
 
         </div>
         
@@ -327,17 +477,17 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Entradas
+                        Articles
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        8
                     </p>
                 </div>
             </div>
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categorias
+                        Catégories
                     </p>
                     <p class="title has-text-weight-normal">
                         4
@@ -347,7 +497,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Etiquetas
+                        Tags
                     </p>
                     <p class="title has-text-weight-normal">
                         5
@@ -357,7 +507,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank">
-                SEGUIR</a>
+                SUIVRE</a>
         </div>
         
         
@@ -406,7 +556,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Links
+            Liens
         </h3>
         <ul class="menu-list">
         
@@ -444,7 +594,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categorias
+                Catégories
             </h3>
             <ul class="menu-list">
             <li>
@@ -453,7 +603,7 @@
                 <span class="level-item">PHP</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/前端/">
@@ -489,9 +639,9 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Nube de etiquetas
+            Nuage de tags
         </h3>
-        <a href="/tags/ECMAScript6/" style="font-size: 10px;">ECMAScript6</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/原则/" style="font-size: 10px;">原则</a> <a href="/tags/读书笔记/" style="font-size: 20px;">读书笔记</a>
+        <a href="/tags/ECMAScript6/" style="font-size: 10px;">ECMAScript6</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/原则/" style="font-size: 10px;">原则</a> <a href="/tags/读书笔记/" style="font-size: 15px;">读书笔记</a>
     </div>
 </div>
 
@@ -503,21 +653,59 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Récents
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/09/phpFunction/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="phpFunction">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-09T02:25:57.000Z">2019-08-09</time></div>
+                    <a href="/2019/08/09/phpFunction/" class="has-link-black-ter is-size-6">phpFunction</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/PHP/">PHP</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/07/phpOperator/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="php运算符">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-07T09:21:33.000Z">2019-08-07</time></div>
+                    <a href="/2019/08/07/phpOperator/" class="has-link-black-ter is-size-6">php运算符</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/PHP/">PHP</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
             <a href="/2019/08/07/phpStart/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="php">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="php备忘">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-07T02:58:50.000Z">2019-08-07</time></div>
-                    <a href="/2019/08/07/phpStart/" class="has-link-black-ter is-size-6">php</a>
+                    <a href="/2019/08/07/phpStart/" class="has-link-black-ter is-size-6">php备忘</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/PHP/">PHP</a>
                     </p>
@@ -563,44 +751,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/08/05/principle/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="principle">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-05T06:25:57.000Z">2019-08-05</time></div>
-                    <a href="/2019/08/05/principle/" class="has-link-black-ter is-size-6">principle</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/读书笔记/">读书笔记</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/03/apacheDeploy/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="apache同一ip部署多个项目配置不同域名">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-03T09:22:47.000Z">2019-08-03</time></div>
-                    <a href="/2019/08/03/apacheDeploy/" class="has-link-black-ter is-size-6">apache同一ip部署多个项目配置不同域名</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/杂项/">杂项</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -609,7 +759,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -619,7 +769,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">8</span>
                 </span>
             </a>
         </li>
@@ -633,7 +783,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -647,7 +797,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/PHP/">
                         <span class="tag">PHP</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -692,21 +842,59 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Récents
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/09/phpFunction/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="phpFunction">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-09T02:25:57.000Z">2019-08-09</time></div>
+                    <a href="/2019/08/09/phpFunction/" class="has-link-black-ter is-size-6">phpFunction</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/PHP/">PHP</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/07/phpOperator/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="php运算符">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-07T09:21:33.000Z">2019-08-07</time></div>
+                    <a href="/2019/08/07/phpOperator/" class="has-link-black-ter is-size-6">php运算符</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/PHP/">PHP</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
             <a href="/2019/08/07/phpStart/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="php">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="php备忘">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-07T02:58:50.000Z">2019-08-07</time></div>
-                    <a href="/2019/08/07/phpStart/" class="has-link-black-ter is-size-6">php</a>
+                    <a href="/2019/08/07/phpStart/" class="has-link-black-ter is-size-6">php备忘</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/PHP/">PHP</a>
                     </p>
@@ -752,44 +940,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/08/05/principle/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="principle">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-05T06:25:57.000Z">2019-08-05</time></div>
-                    <a href="/2019/08/05/principle/" class="has-link-black-ter is-size-6">principle</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/读书笔记/">读书笔记</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/03/apacheDeploy/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="apache同一ip部署多个项目配置不同域名">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-03T09:22:47.000Z">2019-08-03</time></div>
-                    <a href="/2019/08/03/apacheDeploy/" class="has-link-black-ter is-size-6">apache同一ip部署多个项目配置不同域名</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/杂项/">杂项</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -798,7 +948,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -808,7 +958,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">8</span>
                 </span>
             </a>
         </li>
@@ -822,7 +972,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -836,7 +986,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/PHP/">
                         <span class="tag">PHP</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1036,10 +1186,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Entradas',
+                POSTS: 'Articles',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categorias',
-                TAGS: 'Etiquetas',
+                CATEGORIES: 'Catégories',
+                TAGS: 'Tags',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
