@@ -329,7 +329,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    7 minutes read (About 1032 words)
+                    7 minutes read (About 1026 words)
                 </span>
                 
                 
@@ -342,7 +342,7 @@
             
         </h1>
         <div class="content">
-            <table>
+            <h1 id="tip"><a href="#tip" class="headerlink" title="tip"></a>tip</h1><table>
 <thead>
 <tr>
 <th></th>
@@ -378,12 +378,9 @@
 <tr>
 <td>方法:<br>&nbsp;&nbsp;&nbsp;&nbsp;声明 function xxx(){};<br>&nbsp;&nbsp;&nbsp;&nbsp;静态方法操作符为’::’,$this伪变量不允许使用。可以使用self(::)，parent，static在内部调用静态方法与属性。;<br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>construct()构造函数;<br>&nbsp;&nbsp;&nbsp;&nbsp;parent::</strong>construct()调用父类构造函数<br>&nbsp;&nbsp;&nbsp;&nbsp;析构函数 __destruct() <br>&nbsp;&nbsp;&nbsp;&nbsp;可将类名函数名赋给变量动态调用</td>
 </tr>
-<tr>
-<td>***</td>
-</tr>
 </tbody></table>
-<p>###常量:  </p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bool define ( string $name , mixed $value [, bool $case_insensitive = <span class="hljs-keyword">false</span> ] )</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="常量"><a href="#常量" class="headerlink" title="常量:"></a>常量:</h1><figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bool define ( string $name , mixed $value [, bool $case_insensitive = <span class="hljs-keyword">false</span> ] )</span><br></pre></td></tr></table></figure>
 
 <p>常量为全局的且使用时不带$符</p>
 <table>
@@ -411,16 +408,41 @@
 </tr>
 </tbody></table>
 <hr>
-<p>###cookie:<br>setcookie<br>| 参数 |<br>| ———- |<br>|name（ Cookie名）可以通过$_COOKIE[‘name’] 进行访问|<br>|value（Cookie的值）  |<br>|expire（过期时间）Unix时间戳格式，默认为0，表示浏览器关闭即失效   |<br>|path（有效路径）如果路径设置为’/‘，则整个网站都有效,设定了其他路径之后，则只在设定的路径以及子路径下有效  |<br>|domain（有效域）默认整个域名都有效，如果设置了’<a href="http://www.xxx.com&#39;,则只在www子域中有效|" target="_blank" rel="noopener">www.xxx.com&#39;,则只在www子域中有效|</a></p>
+<h1 id="cookie"><a href="#cookie" class="headerlink" title="cookie:"></a>cookie:</h1><table>
+<thead>
+<tr>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name（ Cookie名）可以通过$_COOKIE[‘name’] 进行访问</td>
+</tr>
+<tr>
+<td>value（Cookie的值）</td>
+</tr>
+<tr>
+<td>expire（过期时间）Unix时间戳格式，默认为0，表示浏览器关闭即失效</td>
+</tr>
+<tr>
+<td>path（有效路径）如果路径设置为’/‘，则整个网站都有效,设定了其他路径之后，则只在设定的路径以及子路径下有效</td>
+</tr>
+<tr>
+<td>domain（有效域）默认整个域名都有效，如果设置了’<a href="http://www.xxx.com&#39;,则只在www子域中有效" target="_blank" rel="noopener">www.xxx.com&#39;,则只在www子域中有效</a></td>
+</tr>
+</tbody></table>
 <p>PHP中还有一个设置Cookie的函数setrawcookie，setrawcookie跟setcookie基本一样，唯一的不同就是value值不会自动的进行urlencode，因此在需要的时候要手动的进行urlencode。  </p>
 <p>因为Cookie是通过HTTP标头进行设置的，所以也可以直接使用header方法进行设置。</p>
 <figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">header(<span class="hljs-string">"Set-Cookie:cookie_name=value"</span>);</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//删除cookie</span></span><br><span class="line">setcookie(<span class="hljs-string">'test'</span>, <span class="hljs-string">''</span>, time()<span class="hljs-number">-1</span>); </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//通过header来删除cookie</span></span><br><span class="line">header(<span class="hljs-string">"Set-Cookie:test=1393832059; expires="</span>.gmdate(<span class="hljs-string">'D, d M Y H:i:s \G\M\T'</span>, time()<span class="hljs-number">-1</span>));</span><br></pre></td></tr></table></figure>
+<pre><code class="php"><span class="comment">//删除cookie</span>
+setcookie(<span class="string">'test'</span>, <span class="string">''</span>, time()<span class="number">-1</span>); 
 
+<span class="comment">//通过header来删除cookie</span>
+header(<span class="string">"Set-Cookie:test=1393832059; expires="</span>.gmdate(<span class="string">'D, d M Y H:i:s \G\M\T'</span>, time()<span class="number">-1</span>));</code></pre>
 <hr>
-<p>session:<br>&emsp;在PHP中使用session非常简单，先执行session_start方法开启session，然后通过全局变量$_SESSION进行session的读写。<br>&emsp;session会自动的对要设置的值进行encode与decode，因此session可以支持任意数据类型，包括数据与对象等。<br>&emsp;默认情况下，session是以文件形式存储在服务器上的，因此当一个页面开启了session之后，会独占这个session文件，这样会导致当前用户的其他并发访问无法执行而等待。可以采用缓存或者数据库的形式存储来解决这个问题</p>
-<p>&emsp;删除某个session值可以使用PHP的unset函数，删除后就会从全局变量$_SESSION中去除，无法访问。<br>&emsp;如果要删除所有的session，可以使用session_destroy函数销毁当前session，session_destroy会删除所有数据，但是session_id仍然存在。值得注意的是，session_destroy并不会立即的销毁全局变量$_SESSION中的值，只有当下次再访问的时候，$_SESSION才为空，因此如果需要立即销毁$_SESSION，可以使用unset函数。<br>&emsp;如果需要同时销毁cookie中的session_id，通常在用户退出的时候可能会用到，则还需要显式的调用setcookie方法删除session_id的cookie值。</p>
+<h1 id="session"><a href="#session" class="headerlink" title="session:"></a>session:</h1><p>&emsp;在PHP中使用session非常简单，先执行session_start方法开启session，然后通过全局变量$_SESSION进行session的读写。<br>&emsp;session会自动的对要设置的值进行encode与decode，因此session可以支持任意数据类型，包括数据与对象等。<br>&emsp;默认情况下，session是以文件形式存储在服务器上的，因此当一个页面开启了session之后，会独占这个session文件，这样会导致当前用户的其他并发访问无法执行而等待。可以采用缓存或者数据库的形式存储来解决这个问题</p>
+<p>&emsp;删除某个session值可以使用PHP的unset函数,删除后就会从全局变量&#36;_SESSION中去除，无法访问。  </p>
+<p>&emsp;如果要删除所有的session，可以使用session_destroy函数销毁当前session，session_destroy会删除所有数据，但是session_id仍然存在。<br>&emsp;值得注意的是，session_destroy并不会立即的销毁全局变量&#36;_SESSION中的值，只有当下次再访问的时候,该变量才为空,需要立即销毁可以使用unset函数。<br>&emsp;如果需要同时销毁cookie中的session_id，通常在用户退出的时候可能会用到，则还需要显式的调用setcookie方法删除session_id的cookie值。</p>
 
         </div>
         
@@ -479,7 +501,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        8
+                        7
                     </p>
                 </div>
             </div>
@@ -512,33 +534,9 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/ppoffice">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/arbitrarilylatte">
                 
                 <i class="fab fa-github"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="https://facebook.com">
-                
-                <i class="fab fa-facebook"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="https://twitter.com">
-                
-                <i class="fab fa-twitter"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="Dribbble" href="https://dribbble.com">
-                
-                <i class="fab fa-dribbble"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
-                
-                <i class="fas fa-rss"></i>
                 
             </a>
             
@@ -626,7 +624,7 @@
                 <span class="level-item">读书笔记</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">1</span>
             </span>
         </a></li>
             </ul>
@@ -640,7 +638,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/ECMAScript6/" style="font-size: 10px;">ECMAScript6</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/原则/" style="font-size: 10px;">原则</a> <a href="/tags/读书笔记/" style="font-size: 15px;">读书笔记</a>
+        <a href="/tags/ECMAScript6/" style="font-size: 10px;">ECMAScript6</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/原则/" style="font-size: 10px;">原则</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a>
     </div>
 </div>
 
@@ -714,25 +712,6 @@
         
         <article class="media">
             
-            <a href="/2019/08/07/codeComplete/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="代码大全 2nd">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-07T02:25:36.000Z">2019-08-07</time></div>
-                    <a href="/2019/08/07/codeComplete/" class="has-link-black-ter is-size-6">代码大全 2nd</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/读书笔记/">读书笔记</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/08/05/ECMAScript6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="ECMAScript6笔记">
@@ -745,6 +724,25 @@
                     <a href="/2019/08/05/ECMAScript6/" class="has-link-black-ter is-size-6">ECMAScript6笔记</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/前端/">前端</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/05/principle/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="principle">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-05T06:25:57.000Z">2019-08-05</time></div>
+                    <a href="/2019/08/05/principle/" class="has-link-black-ter is-size-6">principle</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/读书笔记/">读书笔记</a>
                     </p>
                 </div>
             </div>
@@ -768,7 +766,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -817,7 +815,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/读书笔记/">
                         <span class="tag">读书笔记</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -903,25 +901,6 @@
         
         <article class="media">
             
-            <a href="/2019/08/07/codeComplete/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="代码大全 2nd">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-07T02:25:36.000Z">2019-08-07</time></div>
-                    <a href="/2019/08/07/codeComplete/" class="has-link-black-ter is-size-6">代码大全 2nd</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/读书笔记/">读书笔记</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/08/05/ECMAScript6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="ECMAScript6笔记">
@@ -934,6 +913,25 @@
                     <a href="/2019/08/05/ECMAScript6/" class="has-link-black-ter is-size-6">ECMAScript6笔记</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/前端/">前端</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/05/principle/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="principle">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-05T06:25:57.000Z">2019-08-05</time></div>
+                    <a href="/2019/08/05/principle/" class="has-link-black-ter is-size-6">principle</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/读书笔记/">读书笔记</a>
                     </p>
                 </div>
             </div>
@@ -957,7 +955,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -1006,7 +1004,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/读书笔记/">
                         <span class="tag">读书笔记</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
